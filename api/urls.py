@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'rooms', views.RoomViewSet)
 router.register(r'players', views.PlayerViewSet)
 
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('', include('rest_auth.urls')),

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from adventure.models import Room, Player
+from django.contrib.auth.models import User
 
 class RoomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -11,3 +12,8 @@ class PlayerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Player
         fields = ('user', 'currentRoom', 'uuid')
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('email', 'first_name', 'last_name', 'password', 'is_superuser')
