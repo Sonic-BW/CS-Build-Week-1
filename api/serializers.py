@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class RoomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Room
-        fields = ('title', 'description', 'n_to','s_to','e_to','w_to')
+        fields = ('id', 'title', 'description', 'n_to','s_to','e_to','w_to')
 
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
