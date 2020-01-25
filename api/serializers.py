@@ -7,7 +7,7 @@ class RoomSerializer(serializers.HyperlinkedModelSerializer):
         model = Room
         fields = ('title', 'description', 'n_to','s_to','e_to','w_to')
 
-class PlayerSerializer(serializers.HyperlinkedModelSerializer):
+class PlayerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
         fields = ('user', 'currentRoom', 'uuid')
