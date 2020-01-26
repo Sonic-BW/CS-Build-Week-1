@@ -45,7 +45,7 @@ def generate_rooms(self, num_rooms):
         # room = Room(room_count, "A Generic Room", "This is a generic room.", x, y)
         
         #maybe add room_count as the first field to determine id?????
-        room = Room(room_count, f'Room {room_count}', f'This is room # {room_count}')
+        room = Room(f'Room {room_count}', f'This is room # {room_count}')
         
         
         # Note that in Django, you'll need to save the room after you create it
