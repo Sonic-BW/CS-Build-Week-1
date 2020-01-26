@@ -57,7 +57,7 @@ def generate_rooms():
         if previous_room is not None:
             previous_room.connectRooms(room, room_direction)
 
-        # Update iteration variables
+        # Updating iteration variables
         previous_room = room
         room_count += 1
 
@@ -66,6 +66,7 @@ for p in players:
   p.currentRoom=0
   p.save()
 
+generate_rooms()
 
 # w = World()
 # num_rooms = 115
