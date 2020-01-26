@@ -5,7 +5,7 @@ from adventure.models import Player, Room
 
 Room.objects.all().delete()
 
-def generate_rooms(self, num_rooms):
+def generate_rooms():
     num_rooms = 115
     room_count = 0
     previous_room = None
@@ -45,13 +45,14 @@ def generate_rooms(self, num_rooms):
         # room = Room(room_count, "A Generic Room", "This is a generic room.", x, y)
         
         #maybe add room_count as the first field to determine id?????
-        room = Room(f'Room {room_count}', f'This is room # {room_count}')
+        room = Room(title=f'Room {room_count}', description=f'This is room # {room_count}')
         
         
         # Note that in Django, you'll need to save the room after you create it
 
-        # Save the room in the World grid
+        # Saving the room
         room.save()
+        
         # Connect the new room to the previous room
         if previous_room is not None:
             previous_room.connectRooms(room, room_direction)
