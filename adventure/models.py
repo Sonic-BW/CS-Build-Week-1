@@ -57,7 +57,6 @@ def create_user_player(sender, instance, created, **kwargs):
     if created:
         Player.objects.create(user=instance)
         Token.objects.create(user=instance)
-        Player.objects.get(user=instance).pk
 
 @receiver(post_save, sender=User)
 def save_user_player(sender, instance, **kwargs):
