@@ -57,7 +57,7 @@ def generate_rooms():
         if previous_room is not None:
             previous_room.connectRooms(room, room_direction)
 
-        # Updating iteration variables
+        # Updating iteration variables and prev direction
         previous_room = room
         room_count += 1
 
