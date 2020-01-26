@@ -53,11 +53,16 @@ def generate_rooms():
         # Saving the room
         room.save()
         
-        # Connect the new room to the previous room
+       # Connect the new room to the previous room
         if previous_room is not None:
             previous_room.connectRooms(room, room_direction)
+            prev_dir = room_direction
+            reverse_dirs = {"n": "s", "s": "n", "e": "w", "w": "e"}
+            reverse_dir = reverse_dirs[prev_dir]
+            room.connectRooms(previous_room,reverse_dir) 
 
         # Updating iteration variables and prev direction
+
         previous_room = room
         room_count += 1
 
@@ -67,13 +72,3 @@ for p in players:
   p.save()
 
 generate_rooms()
-
-# w = World()
-# num_rooms = 115
-# width = 40
-# height = 20
-# w.generate_rooms(width, height, num_rooms)
-# w.print_rooms()
-
-
-# print(f"\n\nWorld\n  height: {height}\n  width: {width},\n  num_rooms: {num_rooms}\n")
